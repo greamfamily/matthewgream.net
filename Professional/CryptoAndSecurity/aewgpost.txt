@@ -1,0 +1,338 @@
+From mgream Tue Sep 20 12:28:56 1994
+Subject: Australian use and export of crypto/security software
+To: aewg-security@aarnet.edu.au
+Date: Tue, 20 Sep 94 12:28:56 EST
+Organization: University of Technology, Sydney.
+X-Mailer: ELM [version 2.4dev PL17]
+Status: OR
+
+(Having only just subscribed)
+
+I'm forwarding this here because it has some possible implications for
+those running FTP archives with crypto software -- mind you, I'm an
+engineer (well, when I graduate next year) by profession, so my
+interpretations don't come from legal training [ie. a disclaimer].
+
+Because of a misconception of my own about export regulations, I spoke
+to the Defence Signals Directorate and the Defence Industry Policy and
+Operations Division (DIPOD) (and a letter to the Attorney General's
+Dept and DoTC -- related more to the use of encryption technology over
+Australian comms lines when I was researching for radio show [I see
+from the archives that this debate has already occured]) in the last
+two weeks.  I also looked at the appropriate acts and regulations that
+cover this area, so to summarise some salient points:
+
+1.  
+
+The Defence Industry Policy and Operations Division will supply you
+with (though mine came by way of their Industry Development Div) a
+document titled "Australian Controls on the Export of Technology with
+Civil and Military Applications -- A guide for Exporters and
+Importers", September 1992. This summaries the restrictions on `Dual
+Use Technology' exports (part of adherence to COCOM) and includes
+section 5 on `Telecommunications and "Information Security"'. Part 2,
+sections 5.A.2 and 5.D.2 deal with cryptographic hardware and software
+(respectively).
+
+2. 
+
+Conversation with DSD and DIPOD reveals that all software is controlled
+on a end user country basis (once you have authority for a country,
+individual end user permission is just "red tape").  My post on this:
+
+> From: M.Gream@uts.edu.au (Matthew Gream)
+> Newsgroups: aus.computers.ibm-pc,alt.security.pgp
+> Subject: Re: PGP for Oz users
+> Date: 6 Sep 1994 06:44:14 GMT
+> Message-ID: <34h33u$8ht@woodstock.socs.uts.EDU.AU>
+> 
+> Matthew Gream (M.Gream@uts.edu.au) wrote:
+> 
+> > That sounds bogus to me, at least from the information you've given me
+> > there. I've had the pleasure of being routed from our `Australian Trade
+> [..]
+> > I'm fairly confident in saying that there are no export restrictions on
+> > software (specific clause stating that mass market, public domain and
+> > "unsupported after installation" software is not covered by the
+> > Industrial List). There do exist restrictions on hardware. All of these
+> > restrictions are a direct result of our adherence with COCOM
+> > regulations.
+> 
+> I'm afraid I have to post a clarification to a clarification. I've just
+> been in contact with the relevant people at the Defence Signals
+> Directorate. It seems that regardless of advice obtained from other
+> departments and documentation that points to the contrary, there are
+> restrictive controls on software.
+> 
+> In my conversation, the following was articulated (she was refering to
+> the same document as previously mentioned [1]):
+> 
+> 1. The "General Software Note" on Page 1-6 of [1] does not override
+>    the regulations in "Category 5: Telecommunications and `Information
+>    Security'", specifically s.5.A.2 and s.5.D.2. This means that they
+>    assert control over all forms of software _including_ public domain.
+>    I tried to pin-point what the "General Software Note" is for then,
+>    but didn't receive an acceptable answer.
+> 
+> 2. DES can only be exported for specific banking and associated 
+>    applications, even then only to 8 governments and certain banking 
+>    groups. They accept RSA for export where it's used in Key 
+>    Distribution applications. In essence, there is a list of specific
+>    uses for certain algorithms.
+> 
+> 3. Message digests are in general OK, so long as they can't be modified
+>    to perfom cryptographic functions (ie. encryption/decryption).
+> 
+> 4. Export is regulated on a per end user basis. In order words, they
+>    assert control over _each_ item of software sold.
+> 
+> 5. The fact that COCOM is in a "forum" period does not affect the
+>    current regulations.
+> 
+> 6. I specifically asked about "public domain" distribution of software
+>    via the Internet. She said that this was "highly inadvisable" and
+>    "if our government found out about it, they could take action" and
+>    asserted that it would be worse for an individual than if the
+>    violation was carried out by a company. She said that she wouldn't
+>    like someone to become a "test case", and made mention of problems
+>    in the USA.
+> 
+> She was extremely helpfull though, but the real problem I had, and I
+> spent most of my time on this, was that these requirements aren't
+> solidified anywhere, and hence subjective. I'm not really surprised
+> though, that's the whole point of it all.
+> 
+> I wasn't concerned about "weak crypto", only DES, IDEA, RSA, MD* and
+> locally produced algorithms.
+> 
+> In short: Anything cryptographic, they want to know about, and they
+> want to know about it on a per end-user basis. They advise against
+> distribution on the "Internet" and any distribution without prior
+> approval otherwise there could be "problems".
+> 
+> Matthew.
+> 
+> [1] "Australian Controls on the Export of Technology with Civil and
+>     Military Applications", Aust Dept of Defence, Sept 1992.
+> 
+> --
+> Matthew Gream <M.Gream@uts.edu.au> -- Consent Technologies, (02) 821-2043
+> Disclaimer: From? \notin speaking_for(Organization?)            [cfqx103]
+
+I since found out, after talking to DIPOD, that the general software
+note only covers software not specifically required for the products
+functionality, I suppose like an operating system (?) [we had to have
+workstations approved for export to china where I last worked, they
+didn't seem to care about the OS, it was the "RISC" technology that
+was the concern -- and led us to drop from HP 700's to 400's, ick!].
+
+It also turns out that specific applications (banking and financial)
+have a relatively easy approval process, but unknown ones require you
+to supply details of functionality, and they'll ask you questions.
+It appears that they have some "rough" guidelines about what to export
+and what not to export, "Key management" being OK, but "communications
+security products", well ..
+
+Note the implications for export via the Internet though, the reply
+I received (after stating that I was an independant software developer
+and interested in releasing a "limited functionality" version via the
+Internet) was almost a standover.
+
+Because of this, I went to the law section of my library (a real fun
+place!) to find out what legs it all stands on.
+
+3. 
+
+The legal basis for this is embedded in the `Customs (Prohibited
+Exports) Regulations' "in force under the Customs Act 1901". I looked
+at all amendments up to and including 242(1994).
+
+Section 13B deals with items under Schedule 13 which are prohibited
+unless permission in writing has been granted by the Minister of State
+for Defence or an authorised person. Further subsections make note of
+time limits that may be applied, and revokation due to non-compliance.
+
+"Schedule 13, Part 2" contains "Complete or partially complete
+cryptographic equipment designed to ensure the secrecy of
+communications" (in various mediums, video, data, telephony, fax) "or
+stored information" and "Software" performing these functions, and
+"applications software for cryptographic or cryptanalytic purposes"
+etc. There are some 10+ items in this schedule, others deal with
+frequency agile modulation systems (Spread-Spectrum) and multi-level
+security/compartmentalisation software.
+
+As if this didn't squash the issue, Section 13E makes provisions to
+allow the Minister of State for Defence (or someone he/she authorises
+in writing) to control "The exportation from Australia of goods
+specified in the document published by the Minister of State for
+Defence entitled `Australian Controls on the Export of Technology with
+Civil and Military Applications' dated September 1992". There are lots
+of subregulations to deal with not re-exporting from the destination
+country, ability for revokation [this time it can be arbitrary!],
+verification of compliance and so on -- about 2 pages in total.
+
+This completes the "trail" of legality.
+
+4.
+
+The Attorney General's Dept stated that "he was aware" that these were
+the only controls on the export of cryptographic products, actually,
+I'll include the relevant bits from my query and his response:
+
+> 
+> - -- begin first item -- -
+> 
+>   Attn: Commonwealth Attorney-Generals Department
+>   Re:   Government Policy Questions on ``Cryptography''
+> 
+> [..introductory/contextual comments elided..]
+> 
+> Questions:
+> 
+> 1.  What  is the current policy  with regard to encrypting voice
+>     or data communications over the telecommunications network ?
+> 
+>     How does this apply to
+> 
+>       a) Individuals; and
+>       b) Business/Financial organisations; and
+>       c) Telecommunications carriers; and
+>       d) State and Commonwealth Government departments.
+> 
+>     Is  there  any legislation to  cover  this area  (perhaps as
+>     part  of  the  Telecommunications Act,  but  my research has
+>     failed to find an explicit reference) ?
+> 
+>     Are there any plans to review policy in this area ?
+> 
+> [..]
+> 
+> 3.  What restrictions, if any, exist on the following:
+> 
+>       a) Production of cryptographic software and hardware.
+>       b) Export of cryptographic software and hardware.
+>       c) Import of cryptographic software and hardware.
+> 
+>     In respect of b) I am aware of restrictions under the Customs
+>     Act 1901 in Customs (Prohibited Exports) Regulations, reg. 13E.
+> 
+> 4.  Early  last year, the United States Government announced the
+>     voluntary  "Clipper  Initiative".  The  purpose  here was to
+>     introduce  a computer chip for  use in telephones to encrypt
+>     conversations.  In order to satisfy  the legitimate need for
+>     Law  Enforcement to intercept  communications, the system is
+>     designed  in such a way that  the Government retains a means
+>     by  which it can decrypt these communications under warrant.
+>     This is to satisfy the need for privacy via encryption while
+>     not   hampering   legitimate  investigations.   The  USG  is
+>     attempting  to  sell this technology  to foreign nations, as
+>     evidenced by press releases from Europe.
+> 
+>     Has  the Australian Government  considered similar issues to
+>     these ?
+> 
+>     Has  the  Australian  Government  been  approached with this
+>     technology  ? If so, is it  considering or has it considered
+>     buying in ?
+> 
+>     Is the Australian Government considering similar technology ?
+> 
+> - -- end first item -- -
+> 
+> 
+> - -- begin second item -- -
+> 
+> [logo
+> ATTORNEY-
+> GENERAL'S
+> DEPARTMENT                                      Security Division
+> ]
+> 
+> 
+> 94543267
+> 
+> 26 May 1994
+> 
+> 
+> Mr Matthew Gream
+> Consent Technologies
+> Facsimile 02 821 2043
+> 
+> Dear Mr Gream
+> 
+> GOVERNMENT POLICY QUESTIONS ON CRYPTOGRAPHY
+> 
+> I refer to your facsimile letter of 11 April 1994 which was addressed to
+> the Attorney-General's Department. The letter has been passed to me for
+> reply.
+> 
+> 2.    I regret that it has taken some time to respond to you. However,
+> your questions generally concern matters are [sic] not normally dealt
+> with by this Department. The general subject of cryptography would fall
+> more appropriately in the Communications portfolio. I have responded
+> below to the issues which this Department is in a position to answer. In
+> relation to the general policy, however, you may wish to contact:
+> 
+>         Assistant Secretary
+>         Regulatory Policy Branch
+>         Telecommunications Policy Division
+>         Department of the Communications and the Arts
+>         GPO Box 594
+>         CANBERRA ACT 2001 [sic]
+> 
+>         Fax 06 257 2508
+> 
+> 3.     Your first question relates to Government policy on encryption of
+> voice or data communicaitons. This is essentially a matter for the
+> Department of the Communications and the Arts. Although the
+> /Telecommunications (Interception) Act 1979/ is administered by this
+> Department, that legislation does not deal with the issue of encryption.
+> 
+> [..]
+> 
+> 5.     Your third question concerns restricting [sic] on the production,
+> export and import of cryptographic software and hardware. I note your
+> familiarity with the /Customs (Prohibited Exports) Regulations/. I am
+> not aware of any other legislation dealing particularly with
+> cryptographic software and hardware.
+> 
+> 6.     Your fourth question relates to the Clipper Chip initiative. I am
+> aware of this development and the considerable debate it has engendered
+> in the United States. Again, as a general policy issue this is not a
+> matter for this Department. However, I understand that to date the
+> matter of encryption has not been regarded as a significant problem.
+> 
+> 7.     I trust that the above is of some assistance.
+> 
+> 
+> 
+> Yours sincerely
+> 
+> <signature>
+> 
+> Steven Marshall
+> A/g Assistant Secretary
+> National Security Branch
+> 
+> 
+> 
+> Telephone:    270 2341
+> Facsimile:    270 2254
+> 
+> - -- end second item -- -
+
+5.
+
+The DoTC gave me almost exactly the same reply as Ian has noted earlier
+(from archives), ie. encryption over telecommunications carriers is OK
+provided that if it is carried out by a "carrier" itself, then provisions
+must be made to allow access under the Telecommunications (interception)
+Act.
+
+ ----
+
+I'd be interested on any related information in this area, it's become
+a "hobby horse" of mine :-).
+
+Matthew.
+

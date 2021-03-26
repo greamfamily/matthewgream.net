@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<POLICIES xmlns="http://www.w3.org/2002/01/P3Pv1">
+
+  <EXPIRY max-age="604800"/>
+
+  <POLICY name="public"
+    discuri="http://matthewgream.net/Site/"
+	xml:lang="en-AU">
+  
+    <ENTITY>
+      <DATA-GROUP>
+        <DATA ref="#business.name">Matthew Gream</DATA>
+        <DATA ref="#business.contact-info.postal.name">Matthew Gream</DATA>
+        <DATA ref="#business.contact-info.postal.street">39 Craven Hill Gardens</DATA>
+        <DATA ref="#business.contact-info.postal.city">London</DATA> 
+        <DATA ref="#business.contact-info.postal.postalcode">W2 3EA</DATA>
+        <DATA ref="#business.contact-info.postal.country">United Kingdom</DATA>
+        <DATA ref="#business.contact-info.telecom.mobile.intcode">44</DATA>
+        <DATA ref="#business.contact-info.telecom.mobile.loccode">696</DATA>
+        <DATA ref="#business.contact-info.telecom.mobile.number">90248</DATA>
+        <DATA ref="#business.contact-info.online.email">webmaster@matthewgream.net</DATA>
+        <DATA ref="#business.contact-info.online.uri">http://matthewgream.net</DATA>
+      </DATA-GROUP>
+    </ENTITY>
+    
+    <ACCESS><nonident/></ACCESS>
+  
+    <DISPUTES-GROUP>
+      <DISPUTES resolution-type="service" 
+          service="http://matthewgream.net/Site/" 
+          short-description="webmaster@matthewgream.net">
+        <LONG-DESCRIPTION>
+          The Webmaster will address issues relevant to this site and its 
+          content, please raise issues through electronic mail.
+        </LONG-DESCRIPTION>
+        <REMEDIES><correct/></REMEDIES>
+      </DISPUTES>
+    </DISPUTES-GROUP>
+  
+    <STATEMENT>
+      <CONSEQUENCE>
+        Server access logs are collected for operational diagnostics 
+        and management. You cannot opt-in or opt-out.
+      </CONSEQUENCE>
+      <PURPOSE><current/><admin/><develop/></PURPOSE>
+      <RECIPIENT><ours/></RECIPIENT>
+      <RETENTION><indefinitely/></RETENTION>
+      <DATA-GROUP>
+        <DATA ref="#dynamic.clickstream"/>
+        <DATA ref="#dynamic.http"/>
+      </DATA-GROUP>
+    </STATEMENT>
+
+  </POLICY>
+</POLICIES>

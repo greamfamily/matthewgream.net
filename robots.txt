@@ -1,0 +1,11 @@
+
+User-agent: Googlebot
+Disallow: /Contact
+Disallow: /Personal
+Disallow: /Professional
+Disallow: /Site
+Disallow: /cgi-bin
+Disallow: /content
+Disallow: /system
+Disallow: /w3c
+

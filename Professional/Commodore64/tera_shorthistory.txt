@@ -1,0 +1,109 @@
+
+Brief history of TERA AUSTRALIA from MATT's perspective
+http://matthewgream.net/Professional/Commodore64/tera_shorthistory.txt
+July 2004
+
+It's hard to remember details from 15 years ago, even when scroll-texts
+are around to help. The following may contain errors and biased memories,
+so I apologise in advance and ask that you point them out so that I can
+produce updates.
+
+Around 1986 to 1987, in Cabramatta -- a suburb in south western Sydney --
+a couple of teenage friends had usual, but sometimes unhealthy, interests
+in rap music, graffiti, and Commodore 64 game playing. They were swapping
+games locally, but developing an interest in the growing C64 scene. One of
+them (MATT') was experimenting with the machine, and by mid to late 1987,
+they had named themselves TOUR DE FUTURE (TDF) and produced their first
+intro.
+
+TDF was to make a name for itself across 1988. MATT' produced better
+intros and demos and a number of tools, while both he and XLR8 developed a
+trading network with national and international contacts. The TDF
+reputation in Australia began to grow, and some of its early members fell
+away, while others joined (notably MISTIC). In late 1988, TDF entered the
+QUEENSLAND CRACKING FORCE (QCF) aussie demo comp with BACK FROM BEYOND,
+and did quite well. This, along with other intros, demos, and tools
+including the now famous NOTEMAKER, boosted TDF's reputation in late 1988
+and early 1989. Its trading networks also grew to include top name
+European contacts.
+
+Other wholly Australian grown groups were making a name for themselves on
+the scene at the time, including TEC, QCF, IKON VISUAL and REFLEX, yet
+other individuals had chosen to buy into international groups (such as THE
+FORCE and WARRIORS OF TIME). TDF also had good friends on the local Sydney
+scene, especially HEX-HACKER and SNOOP of THE SOFT SMASHERS 6802
+(TSS6802).
+
+Somewhere in early 1989, TDF and REFLEX decided to merge. The name TDF+RFX
+was used during a transition period, until a better name was worked out.
+The merger was a good one: RFX had good coders, but more strength in
+traders, whereas TDF had an experienced coder, but weaker traders. TDF was
+then MATT', XLR8 and MISTIC, while RFX was BOSS, BULLET, ELIMINATOR and
+STOREMAN. TDF could also count TSS6802 as an extended family. Soon,
+KILENEMY of QCF joined TDF+RFX. These events were reported in the May 1989
+and July 1989 issues of SEX'N'CRIME.
+
+In June 1989, TEC organised the TEC-Illegal party in Sydney, and MATT'
+entered OHH MATE!! into the competition. It's not clear whether this demo
+won, as there was controversy, but it was given favourable reporting in
+the July 1989 issue of SEX'N'CRIME, which also ranked TDF+RFX as number
+two on the Australian scene. BOSS, BULLET and ELIMINATOR had also released
+products under the TDF+RFX label around this time.
+
+TDF+RFX was a solid, national group. It had grown from various roots, but
+offered a united front, with solid coders and traders. The group was
+conscious of the need to only accept worthy members, who represented the
+team and contributed to its progress, while existing members became more
+focused on their roles, for example, MATT' concentrated on coding and
+passed many of his contacts over to XLR8 and MISTIC as focused traders.
+The group was also venturing onto international bulletin boards and
+conferences, as shown in the OHH MATE!! demo.
+
+TERA was officially formed between June and September 1989. The name was
+inspired by a graffiti piece in Sydney, but had strong connotations of
+Australia (which was originally named TERRA AUSTRALIS). SNOOP and HEX-
+HACKER from TSS6802 were admitted to the group at this time.
+
+TERA began releasing a wider variety of products. The successful note-
+maker series was continued with NOTEMAKER V2.0, STUBBY-NOTER and 4 BLOCK
+NOTER! The ECONOVAN magazine began, ultimately lasting for at least 5
+issues under two different engines. The RLE world-record was broken with
+BEEFTRUCKER. Numerous demos, intros and tools, were produced under the
+TERA label, for TERA itself and for other groups as gifts. In return,
+other groups produced works for TERA, such as disk covers. The non-coding
+members were actively plying the trading scene and building a high quality
+network. TERA was on the scene in a big way.
+
+In December 1989, THE FORCE held a copy-party in Adelaide. TERA guys from
+Sydney attended, and were hosted by MADHACKER of IKON VISUAL. MATT' put
+together most of the DAMNABLE demo in Sydney, but finalised the parts in
+Adelaide with party text, linking and crunching. BOSS and BULLET
+contributed RIPP-OFF, but were not able to attend. DAMNABLE won the
+competition, and TERA was excited to be Australia's leading group -- it
+topped off a fantastic six months.
+
+After returning to Sydney, MATT' continued to code, and HEX-HACKER began a
+period of prolific output for TERA. The group continued its foray into the
+world of international boards, amongst other teenage antics. MISTIC
+secured a US board in 212, called THE JUNGLE, and worked hard to cultivate
+European members. However, by mid 1990, MATT' had turned away from the
+C64, because of other life and computing interests -- this was coding
+loss, but the group continued to trade hard.
+
+The European members, by then at least SLIDE, CHRIS, TRAX, JACE, INDY,
+DANCE and possibly others, held a German TERA/FRESH copy-party in July
+1990, around which time the SOLICITUDE demo was released. It had started
+out under MATT', but was later finalised by the rest of the group to
+include contributions from many members.
+
+The history of TERA after this is unclear. HEX-HACKER's GANGSTA demo of
+late 1990 was not released until 1992, and ECONOVAN #5 of August 1990
+reports that TERA had been quiet on the scene with HEX-HACKER leaving for
+WOW while BOSS and ELIMINATOR had given up the C64 scene altogether. What
+happened to other members is not known.
+
+TDF, TDF+RFX and TERA productions can be found at Gangsta's Paradise
+(ftp://c64.rulez.org/), CSDB (http://noname.c64.org/csdb) and Spook's C64
+Tribute CD (http://www.c64demos.com/). MATT' has a history of his
+activities and works on the scene at http://matthewgream.net.
+

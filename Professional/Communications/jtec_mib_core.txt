@@ -1,0 +1,612 @@
+
+
+--
+--   Copyright $Date: 2002/08/09 12:09:45 $ Jtec Pty Limited
+--
+--   Jtec  reserves the right to make changes in
+--   specification and other information contained in this document
+--   without prior notice.  The reader should consult Jtec
+--   to determine whether any such changes have been made.
+--
+--   In no event shall Jtec  be liable for any incidental,
+--   indirect, special, or consequential damages whatsoever (including
+--   but not limited to lost profits) arising out of or related to this
+--   document or the information contained in it, even if Jtec
+--   has been advised of, known, or should have known, the
+--   possibility of such damages.
+--
+--   Jtec grants vendors, end-users, and other interested parties
+--   a non-exclusive license to use this Specification in connection
+--   with the management of Jtec products.
+--
+--   $Author: matt $
+--   $Revision: 1.1.1.1 $
+
+
+
+-----------------------------------------------------------------------
+--  Object (Module):
+--      Core Management
+--  Status:
+--      Optional
+--  Description:
+--      Contains information used as part of all other mibs. This
+--      specifies the basic definitions and global facilities that
+--      are present and used by other modules. The other modules
+--      will tend to import from this one.
+-----------------------------------------------------------------------
+
+JTEC-CORE-MIB DEFINITIONS
+  ::= BEGIN
+
+    IMPORTS
+        enterprises, TimeTicks, Counter, Gauge
+            FROM RFC1155-SMI
+    ;
+
+    jtec                    OBJECT IDENTIFIER ::= { enterprises 415 }
+    jservices               OBJECT IDENTIFIER ::= { jtec 1 }
+    jphysical               OBJECT IDENTIFIER ::= { jtec 2 }
+    jsystems                OBJECT IDENTIFIER ::= { jtec 4 }
+    jexperimental           OBJECT IDENTIFIER ::= { jtec 5 }
+
+--  BEGIN (Duplication of MIBv2 SMI)
+--  The following items are SNMPv1 interpretations of the SNMPv2
+--  textual conventions. These are from RFC 1442 and RFC 1443.
+
+BogusEntry ::= INTEGER
+Counter32 ::= Counter
+Gauge32 ::= Gauge
+Integer32 ::= INTEGER (-2147483648..2147483647)
+
+DisplayString ::= OCTET STRING(SIZE(0..255))
+--PhysAddress ::= OCTET STRING
+PhysAddress ::= DisplayString
+MacAddress ::= OCTET STRING(SIZE(6))
+TruthValue ::= INTEGER { true(1), false(2) }
+InstancePointer ::= OBJECT IDENTIFIER
+RowStatus ::= INTEGER {
+        active(1),
+        notInService(2),
+        notReady(3),
+        createAndGo(4),
+        createAndWait(5),
+        destroy(6)
+        }
+TimeStamp ::= TimeTicks
+TimeInterval ::= INTEGER(0..2147483647)
+DateAndTime ::= OCTET STRING(SIZE(8 | 11))
+
+--  END (Duplication of MIBv2 SMI)
+
+
+-----------------------------------------------------------------------
+--  Object (Textual Convention):
+--      JmoAdminState
+--  Status:
+--      Mandatory
+--  Description:
+--      This is used to specify the state of an object (of any type)
+--      and has two values.
+--
+--      * enabled -- the object is enabled and operational.
+--
+--      * disabled -- the object is disabled and not operational.
+--
+-----------------------------------------------------------------------
+    
+    JmoAdminState
+      ::= INTEGER { enabled (1),
+                    disabled (2)
+                  }
+
+
+-----------------------------------------------------------------------
+--  Object (Textual Convention):
+--      JmoCount
+--  Status:
+--      Mandatory
+--  Description:
+--      This is used to count information. It may move in a positive
+--      or negative direction (i.e. increase or decrease).
+--
+-----------------------------------------------------------------------
+    
+    JmoCount
+      ::= Integer32
+
+
+-----------------------------------------------------------------------
+--  Object (Textual Convention):
+--      JmoDescription
+--  Status:
+--      Mandatory
+--  Description:
+--      This is used to convey a textual description for some purpose.
+--      It is bounded at 64 characters.
+--
+-----------------------------------------------------------------------
+    
+    JmoDescription
+      ::= DisplayString (SIZE (0..64))
+
+
+-----------------------------------------------------------------------
+--  Object (Textual Convention):
+--      JmoTotal
+--  Status:
+--      Mandatory
+--  Description:
+--      This is used to sum information, generally counts. It will
+--      always increase, and latch at maximum value.
+--
+-----------------------------------------------------------------------
+    
+    JmoTotal
+      ::= Integer32
+
+
+-----------------------------------------------------------------------
+--  Object (Textual Convention):
+--      JmoInteger
+--  Status:
+--      Mandatory
+--  Description:
+--      This is a basic integer.
+--
+-----------------------------------------------------------------------
+
+    JmoInteger
+      ::= INTEGER
+
+
+-----------------------------------------------------------------------
+--  Object (Textual Convention):
+--      JmoName
+--  Status:
+--      Mandatory
+--  Description:
+--      This is used to store a descriptive name for an object. In
+--      general, this name identifies the object for reference
+--      purposes.
+--
+-----------------------------------------------------------------------
+
+    JmoName
+      ::= DisplayString (SIZE (0..16))
+
+
+-----------------------------------------------------------------------
+--  Object (Textual Convention):
+--      JmoVersion
+--  Status:
+--      Mandatory
+--  Description:
+--      This is used to store a version number.
+--
+-----------------------------------------------------------------------
+
+    JmoVersion
+      ::= Integer32
+
+
+-----------------------------------------------------------------------
+--  Object (Textual Convention):
+--      JmoFilename
+--  Status:
+--      Mandatory
+--  Description:
+--      This is used to encapsulate a filename as stored in the
+--      the flash via. the configuration manager.
+--
+-----------------------------------------------------------------------
+
+    JmoFilename
+      ::= DisplayString (SIZE (0..14))
+
+
+-----------------------------------------------------------------------
+--  Object (Textual Convention):
+--      JmoHistory
+--  Status:
+--      Mandatory
+--  Description:
+--      This specifies the history level for an object. It may have
+--      two values.
+--
+--      * enabled -- the history is enabled, so a copy of the object
+--          will logged when it is removed.
+--
+--      * disabled -- the history is disabled, so none will be kept.
+--
+-----------------------------------------------------------------------
+
+    JmoHistory
+      ::= INTEGER { enabled (1),
+                    disabled (2)
+                  }
+
+
+-----------------------------------------------------------------------
+--  Object (Textual Convention):
+--      JmoIdentifier
+--  Status:
+--      Mandatory
+--  Description:
+--      This is used to represent a 48bit unique identifier, which
+--      tags objects in the system. Since the last system start up,
+--      this value will always be unique. This ensures that references
+--      to objects are unique.
+--
+-----------------------------------------------------------------------
+
+    JmoIdentifier
+      ::= OCTET STRING (SIZE (8))
+
+
+-----------------------------------------------------------------------
+--  Object (Textual Convention):
+--      JmoSerialNumber
+--  Status:
+--      Mandatory
+--  Description:
+--      This is used to represent a hardware serial number.
+--
+-----------------------------------------------------------------------
+
+    JmoSerialNumber
+      ::= OCTET STRING (SIZE (8))
+
+
+-----------------------------------------------------------------------
+--  Object (Textual Convention):
+--      JmoInstance
+--  Status:
+--      Mandatory
+--  Description:
+--      This is used to represent an instance of an object, which is
+--      generally when one object must refer to another, or must be
+--      able to distinguish rows. Generally the value of the instance
+--      does not have significance, but the ordering may.
+--
+-----------------------------------------------------------------------
+
+    JmoInstance
+      ::= INTEGER
+
+
+-----------------------------------------------------------------------
+--  Object (Textual Convention):
+--      JmoBandwidth
+--  Status:
+--      Mandatory
+--  Description:
+--      This primitive type is used to represent a bandwidth.
+--
+-----------------------------------------------------------------------
+
+    JmoBandwidth
+      ::= Integer32
+
+
+-----------------------------------------------------------------------
+--  Object (Textual Convention):
+--      JmoChargeUnits
+--  Status:
+--      Mandatory
+--  Description:
+--      This primitive type is used to represent units of charge,
+--      as used for accounting reasons.
+--
+-----------------------------------------------------------------------
+
+    JmoChargeUnits
+      ::= Integer32
+
+
+-----------------------------------------------------------------------
+--  Object (Textual Convention):
+--      JmoRate
+--  Status:
+--      Mandatory
+--  Description:
+--      This primitive type is used to represent rates of change.
+--      These are computed for performance reasons.
+--
+-----------------------------------------------------------------------
+
+    JmoRate
+      ::= Integer32
+
+
+-----------------------------------------------------------------------
+--  Object (Textual Convention):
+--      JmoRowStorage
+--  Status:
+--      Mandatory
+--  Description:
+--      Specifies where the row, or object, is to be stored. It has
+--      three values.
+--
+--      * other -- unspecified storage, possibly in ROM or otherwise
+--          fixed.
+--
+--      * volatile -- stored in RAM only, and lost when the system
+--          restarts.
+--
+--      * persistent -- stored in the configuration file, which does
+--          reside in FLASH RAM. This is retained across system
+--          restarts.
+--
+-----------------------------------------------------------------------
+
+    JmoRowStorage
+      ::= INTEGER { other (1),
+                    volatile (2),
+                    persistent (3)
+                  }
+
+
+-----------------------------------------------------------------------
+--  Object (Textual Convention):
+--      JmoConfigRowStatus
+--  Status:
+--      Mandatory
+--  Description:
+--      This is used to control the state of a row in a config
+--      object. The following values are defined:
+--
+--      * other -- unspecified status.
+--
+--      * invalid -- the row does not exist.
+--
+--      * inactive -- the row does exist but is not active.
+--
+--      * active -- the row does exist and is active.
+--
+-----------------------------------------------------------------------
+
+    JmoConfigRowStatus
+      ::= INTEGER { other (1),
+                    invalid (2),
+                    inactive (3),
+                    active (4)
+                  }
+
+
+-----------------------------------------------------------------------
+--  Object (Textual Convention):
+--      JmoStatusRowStatus
+--  Status:
+--      Mandatory
+--  Description:
+--      This is used to control the state of a row in a status
+--      object. The following values are defined:
+--
+--      * other -- unspecified status.
+--
+--      * invalid -- the row does not exist.
+--
+--      * inactive -- the row does exist but is not active.
+--
+--      * active -- the row does exist and is active.
+--
+-----------------------------------------------------------------------
+
+    JmoStatusRowStatus
+      ::= INTEGER { other (1),
+                    invalid (2),
+                    inactive (3),
+                    active (4)
+                  }
+
+
+-----------------------------------------------------------------------
+--  Object (Textual Convention):
+--      JmoOperationRowStatus
+--  Status:
+--      Mandatory
+--  Description:
+--      This is used to control the state of a row in a operation
+--      object. The following values are defined:
+--
+--      * other -- unspecified status.
+--
+--      * invalid -- the row does not exist.
+--
+--      * inactive -- the row does exist but is not active.
+--
+--      * active -- the row does exist and is active.
+--
+-----------------------------------------------------------------------
+
+    JmoOperationRowStatus
+      ::= INTEGER { other (1),
+                    invalid (2),
+                    inactive (3),
+                    active (4)
+                  }
+
+
+-----------------------------------------------------------------------
+--  Object (Textual Convention):
+--      JmoBoolean
+--  Status:
+--      Mandatory
+--  Description:
+--      This is used to represent a boolean on/off condition.
+--
+-----------------------------------------------------------------------
+
+    JmoBoolean
+      ::= INTEGER { true (1),
+                    false (2)
+                  }
+
+
+-----------------------------------------------------------------------
+--  Object (Textual Convention):
+--      JmoTimeStamp
+--  Status:
+--      Mandatory
+--  Description:
+--      This is used to represent a timestamp.
+--
+-----------------------------------------------------------------------
+
+    JmoTimeStamp
+      ::= TimeStamp
+
+
+-----------------------------------------------------------------------
+--  Object (Textual Convention):
+--      JmoTimeTicks
+--  Status:
+--      Mandatory
+--  Description:
+--      This is used to represent time ticks.
+--
+-----------------------------------------------------------------------
+
+    JmoTimeTicks
+      ::= TimeTicks
+
+
+-----------------------------------------------------------------------
+--  Object (Textual Convention):
+--      JmoPhysAddress
+--  Status:
+--      Mandatory
+--  Description:
+--      This is used to represent a physical address.
+--
+-----------------------------------------------------------------------
+
+    JmoPhysAddress
+      ::= PhysAddress
+
+
+-----------------------------------------------------------------------
+--  Object (Textual Convention):
+--      JmoCircuitProtocolType
+--  Status:
+--      Mandatory
+--  Description:
+--      This is used to specify the type of protocol being carried
+--      by the circuit for a party. The following values are defined:
+--
+--      * other -- the protocol type is other, because we don'
+--          quite know yet.
+--
+--      * analog-unspecified -- the protocol type is analog, but
+--          it is unspecified what type of analog.
+--  
+--      * analog-voice -- the protocol type is analog, with
+--          voice data.
+--
+--      * analog-facsimile -- the protocol type is analog, with
+--          facsimile data.
+--
+--      * analog-modem -- the protocol type is analog, with
+--          modulated digital data.
+--
+--      * analog-compressed -- the protocol type is analog,
+--          with compressed (voice) data.
+--
+--      * digital-unspeciifed -- the protocol type is digital,
+--          with unspecified type of data.
+--
+--      * digital-fast-packet -- the protocol type is digital, 
+--          with fast packet data.
+--
+--      * digital-hdlc-framed -- the protocol type is digital
+--          with hdlc framed data.
+--
+--      * digital-sna -- the protocol type is digital with SNA
+--          data.
+--
+-----------------------------------------------------------------------
+    
+    JmoCircuitProtocolType
+      ::= INTEGER { other (1),
+                    
+                    analog-unspecified (2),
+                    analog-voice (3),
+                    analog-facsimile (4),
+                    analog-modem (5),
+                    analog-compressed (6),
+
+                    digital-unspecified (1002),
+                    digital-fast-packet (1003),
+                    digital-hdlc-framed (1004),
+                    digital-sna (1005)
+                  }
+
+
+-----------------------------------------------------------------------
+--  Object (Textual Convention):
+--      JmoCircuitProtocolSubType
+--  Status:
+--      Mandatory
+--  Description:
+--      This is used to specify the sub type of the protocol being
+--      carried by the circuit for a party. The following values
+--      are defined:
+--
+--      * other -- the subtype is some other type not known.
+--
+--      * default -- the subtype is the default type.
+--
+-----------------------------------------------------------------------
+    
+    JmoCircuitProtocolSubType
+      ::= INTEGER { other (1),
+                    default (2)
+                  }
+
+
+-----------------------------------------------------------------------
+--  Object (Textual Convention):
+--      JmoSignallingProtocolType
+--  Status:
+--      Mandatory
+--  Description:
+--      This is used to specify the type of signalling carried
+--      by a party. The following values are defined:
+--
+--      * other -- the protocol type is other, not known.
+--
+--      * q931 -- the protocol type is q931 based.
+--
+-----------------------------------------------------------------------
+    
+    JmoSignallingProtocolType
+      ::= INTEGER { other (1),
+                    q931 (2)
+                  }
+
+
+-----------------------------------------------------------------------
+--  Object (Textual Convention):
+--      JmoSignallingProtocolSubType
+--  Status:
+--      Mandatory
+--  Description:
+--      This is used to specify the subtype of signalling carried
+--      by a party.
+--
+--      * other -- the protocol subtype is an other type, not known.
+--
+--      * default -- the protocol subtype is the default for that
+--          type.
+--
+-----------------------------------------------------------------------
+    
+    JmoSignallingProtocolSubType
+      ::= INTEGER { other (1),
+                    default (2)
+                  }
+
+
+  END -- JTEC-CORE-MIB
+
