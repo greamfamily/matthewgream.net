@@ -3,7 +3,7 @@
 DirectoryIndex index.htm
 IndexIgnore *
 
-RewriteEngine On
+# RewriteEngine On
 # RewriteCond %{HTTP_HOST} !^matthewgream\.net.*$ [NC]
 # RewriteCond %{HTTP_HOST} !^localhost.*$ [NC]
 # RewriteCond %{REMOTE_ADDR} !^192\.168\..*$
@@ -18,16 +18,16 @@ ErrorDocument 404 /system/Unavailable.htm
 ErrorDocument 410 /system/Removed.htm
 ErrorDocument 500 /system/InternalError.htm
 
-RewriteRule ^.*w3c/$ - [G]
-RewriteRule ^.*Personal/Gallery.*$ - [G]
-RewriteRule ^.*intros.d64$ - [G]
-RewriteRule ^.*IntellectualProperty/out0001.css$ - [G]
-RewriteRule ^.*historyofart.*$ - [G]
-RewriteRule ^.*content/openbsd.*$ - [G]
-RewriteRule ^.*professional.*$ - [G]
-RewriteRule ^.*Professional/.*\.\.\.\.$ - [G]
-RewriteRule ^.*intellectualproperty.*$ - [G]
-RewriteRule ^.*cgi-bin/.*$ - [G]
+# RewriteRule ^.*w3c/$ - [G]
+# RewriteRule ^.*Personal/Gallery.*$ - [G]
+# RewriteRule ^.*intros.d64$ - [G]
+# RewriteRule ^.*IntellectualProperty/out0001.css$ - [G]
+# RewriteRule ^.*historyofart.*$ - [G]
+# RewriteRule ^.*content/openbsd.*$ - [G]
+# RewriteRule ^.*professional.*$ - [G]
+# RewriteRule ^.*Professional/.*\.\.\.\.$ - [G]
+# RewriteRule ^.*intellectualproperty.*$ - [G]
+# RewriteRule ^.*cgi-bin/.*$ - [G]
 
 # -- old content
 Redirect 301 /Professional/Communications/thesis_present.pdf http://my-matthewgream-net.herokuapp.com/Professional/Communications/uts_thesis_present.pdf
