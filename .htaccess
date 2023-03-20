@@ -3,7 +3,7 @@
 DirectoryIndex index.htm
 IndexIgnore *
 
-# RewriteEngine On
+RewriteEngine On
 # RewriteCond %{HTTP_HOST} !^matthewgream\.net.*$ [NC]
 # RewriteCond %{HTTP_HOST} !^localhost.*$ [NC]
 # RewriteCond %{REMOTE_ADDR} !^192\.168\..*$
