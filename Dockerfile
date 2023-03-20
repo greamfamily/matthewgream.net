@@ -17,4 +17,7 @@ RUN set -ex; \
 WORKDIR /var/www/html
 COPY . ./
 RUN sed -i 's/80/${PORT}/g' /etc/apache2/sites-available/000-default.conf /etc/apache2/ports.conf
+RUN if command -v a2enmod >/dev/null 2>&1; then \
+        a2enmod rewrite headers \
+    ;fi
 RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
