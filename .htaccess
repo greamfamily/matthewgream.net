@@ -3,12 +3,12 @@
 DirectoryIndex index.htm
 IndexIgnore *
 
-RewriteEngine On
-RewriteCond %{HTTP_HOST} !^matthewgream\.net.*$ [NC]
-RewriteCond %{HTTP_HOST} !^localhost.*$ [NC]
-RewriteCond %{REMOTE_ADDR} !^192\.168\..*$
-RewriteCond %{HTTP_HOST} !^$
-RewriteRule (.*) http://matthewgream.net/$1 [R=301,L]
+# RewriteEngine On
+# RewriteCond %{HTTP_HOST} !^matthewgream\.net.*$ [NC]
+# RewriteCond %{HTTP_HOST} !^localhost.*$ [NC]
+# RewriteCond %{REMOTE_ADDR} !^192\.168\..*$
+# RewriteCond %{HTTP_HOST} !^$
+# RewriteRule (.*) http://matthewgream.net/$1 [R=301,L]
 
 # -- specify our own error documents
 ErrorDocument 400 /system/BadRequest.htm
